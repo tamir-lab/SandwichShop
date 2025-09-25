@@ -12,29 +12,45 @@ public class SandwichApp {
 
         if (size.equalsIgnoreCase("Regular")){
             basePrice = 5.45;
+            System.out.println("Do you want to make it loaded? yes/no");
+            String answer = scanner.nextLine();
+            if (answer.equalsIgnoreCase("yes")){
+                basePrice += 1;
+            }
             System.out.println("How old are you? ");
             int age = scanner.nextInt();
-            if (age <= 17){
+            if (age <= 17 && age >0 ){
                 basePrice *= 0.9;
             }
             else if (age >= 65) {
                 basePrice *= 0.8;
             }
+            else if(age > 17) {
+                basePrice *=1;}
             else {
+                basePrice = 0;
                 System.out.println("Wrong age");
             }
         }
         else if (size.equalsIgnoreCase("Large")) {
             basePrice = 8.95;
+            System.out.println("Do you want to make it loaded? yes/no");
+            String answer = scanner.nextLine();
+            if (answer.equalsIgnoreCase("yes")){
+                basePrice += 1.75;
+            }
             System.out.println("How old are you? ");
             int age = scanner.nextInt();
-            if (age <= 17){
+            if (age <= 17 && age >0 ){
                 basePrice *= 0.9;
             }
             else if (age >= 65) {
                 basePrice *= 0.8;
             }
-            else {
+            else if(age > 17) {
+                basePrice *=1;
+            } else {
+                basePrice = 0;
                 System.out.println("Wrong age");
             }
         }
